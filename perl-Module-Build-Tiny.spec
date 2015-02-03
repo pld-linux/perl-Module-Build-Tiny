@@ -6,15 +6,15 @@
 %define		pnam	Build-Tiny
 %include	/usr/lib/rpm/macros.perl
 Summary:	Module::Build::Tiny - A tiny replacement for Module::Build
-#Summary(pl.UTF-8):	
+Summary(pl.UTF-8):	Module::Build::Tiny - mały zamiennik systemu Module::Build
 Name:		perl-Module-Build-Tiny
-Version:	0.034
+Version:	0.039
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Module/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	31efb75e0e535566c70551b46d981f7e
+# Source0-md5:	2332c90c17454107fea3f2614e11a3a9
 URL:		http://search.cpan.org/dist/Module-Build-Tiny/
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -38,11 +38,15 @@ lightweight, drop-in replacement.
 Whereas Module::Build has over 6,700 lines of code; this module has
 less than 120, yet supports the features needed by most distributions.
 
-Your .pm and .pod files must be in lib/.  Any executables must be in
-script/.  Test files must be in t/. Dist sharedirs must be in share/.
+%description -l pl.UTF-8
+Wiele pakietów perlowych wykorzystuje plik Build.PL zamiast pliku
+Makefile.PL do sterowania konfiguracją, budowaniem, testowaniem i
+instajacją. Tradycyjnie Build.PL w roli systemu budującego
+wykorzystuje Module::Build; ten moduł dostarcza prosty, lekki
+zamiennik.
 
-# %description -l pl.UTF-8
-# TODO
+O ile Module::Build ma ponad 6700 linii kodu, ten moduł ma mniej niż
+120, a obsługuje funkcje wymaganych przez większość pakietów.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -71,4 +75,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes INSTALL README
 %dir %{perl_vendorlib}/Module/Build
 %{perl_vendorlib}/Module/Build/Tiny.pm
-%{_mandir}/man3/*
+%{_mandir}/man3/Module::Build::Tiny.3pm*
