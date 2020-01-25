@@ -4,7 +4,6 @@
 #
 %define		pdir	Module
 %define		pnam	Build-Tiny
-%include	/usr/lib/rpm/macros.perl
 Summary:	Module::Build::Tiny - A tiny replacement for Module::Build
 Summary(pl.UTF-8):	Module::Build::Tiny - mały zamiennik systemu Module::Build
 Name:		perl-Module-Build-Tiny
