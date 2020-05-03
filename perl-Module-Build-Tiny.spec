@@ -14,10 +14,11 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Module/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	2332c90c17454107fea3f2614e11a3a9
-URL:		http://search.cpan.org/dist/Module-Build-Tiny/
+URL:		https://metacpan.org/release/Module-Build-Tiny
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl-ExtUtils-Config >= 0.003
 BuildRequires:	perl-ExtUtils-Helpers >= 0.020
