@@ -1,29 +1,31 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define		pdir	Module
 %define		pnam	Build-Tiny
 Summary:	Module::Build::Tiny - A tiny replacement for Module::Build
 Summary(pl.UTF-8):	Module::Build::Tiny - mały zamiennik systemu Module::Build
 Name:		perl-Module-Build-Tiny
-Version:	0.047
+Version:	0.052
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Module/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	de9814b3c22825837438fc70adad58ac
-URL:		https://metacpan.org/release/Module-Build-Tiny
-BuildRequires:	perl-Module-Build
+Source0:	https://www.cpan.org/modules/by-module/Module/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	91e56a426d82dbf33761984e26ed8acb
+URL:		https://metacpan.org/dist/Module-Build-Tiny
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
+BuildRequires:	perl(Exporter) >= 5.57
 BuildRequires:	perl-ExtUtils-Config >= 0.003
 BuildRequires:	perl-ExtUtils-Helpers >= 0.020
 BuildRequires:	perl-ExtUtils-InstallPaths >= 0.002
-BuildRequires:	perl-Test-Harness >= 3.30
+BuildRequires:	perl-Getopt-Long >= 2.36
+BuildRequires:	perl-JSON-PP >= 2
+BuildRequires:	perl-Test-Simple >= 0.88
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -72,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes INSTALL README
+%doc Changes README Todo
 %dir %{perl_vendorlib}/Module/Build
 %{perl_vendorlib}/Module/Build/Tiny.pm
 %{_mandir}/man3/Module::Build::Tiny.3pm*
