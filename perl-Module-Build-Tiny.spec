@@ -7,13 +7,13 @@
 Summary:	Module::Build::Tiny - A tiny replacement for Module::Build
 Summary(pl.UTF-8):	Module::Build::Tiny - mały zamiennik systemu Module::Build
 Name:		perl-Module-Build-Tiny
-Version:	0.052
+Version:	0.053
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	https://www.cpan.org/modules/by-module/Module/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	91e56a426d82dbf33761984e26ed8acb
+Source0:	https://www.cpan.org/modules/by-authors/id/L/LE/LEONT/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	606d1f830f0475b6de53b82aa3e5d36a
 URL:		https://metacpan.org/dist/Module-Build-Tiny
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
